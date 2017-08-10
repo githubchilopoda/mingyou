@@ -1,0 +1,11 @@
+.content{width:1200px;margin: 20px auto 0;}
+.content .sidebar{float:left;}
+
+.main{width:870px;float:right;}
+table{background:#f8f8f8;padding:0 15px;width:100%;}
+table th{line-height: 50px;}
+table tbody td{text-align: center;background: url(../img/table_td_back.png) repeat-x center;}
+table tbody tr{background: #fff;height:180px;margin-bottom: 20px;}
+table tbody tr img{margin: 0 auto;width:100px;color:#333;}
+table  tbody s,table  tbody i,table  tbody span,table  tbody a{font:18px '微软雅黑';color:#333;}
+table tbody td a:hover{color:#ca1c12;}

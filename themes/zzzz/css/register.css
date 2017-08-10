@@ -1,0 +1,24 @@
+.header{border:none;}
+.header .center{width:1200px;margin: 0 auto;}
+.header .center .logo{display: inline-block;border-right:2px solid #999;padding:30px 10px 10px;margin: 3px 0;}
+.header .center h4,.header .center h5{display: inline-block;}
+.header .center h4{font:30px '微软雅黑';}
+.header .center h5{font:18px '微软雅黑';float:right;margin-top:65px;}
+.header .center h5 a{border:1px solid #333;padding:3px 5px;}
+.header .center h5 a:hover{color:#ca1c12;}
+
+.content{background: url(../img/register_backg.PNG) no-repeat center center;height:1200px;background-size:100% 100%;}
+.content .form{margin: 0 auto;width:1200px;}
+.content .form ul{background: rgba(217,215,213,.5);float:right;width:600px;padding:40px 35px;margin-top: 140px;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#50d9d7d5,endColorstr=#50d9d7d5);}
+.content .form ul li{font:24px/35px '微软雅黑';position:relative;}
+.content .form ul li i{position:absolute;top:35px;left:100px;font-size:14px}
+.content .form ul li input{width:530px;background: none;border:1px solid #575656;font:18px/42px '微软雅黑';height:42px;padding:0 10px;color:#666;}
+.content .form ul li .text_code{width:200px;}
+.content .form ul li #checkCode{width:150px;height:44px;margin-left:30px;cursor:pointer;background:url(../img/reg_code.png);color:#fff;letter-spacing: 10px;}
+.content .form ul li .on strong{color:red;margin-left: 15px;font-family: '微软雅黑';}
+.content .form ul li .min_box{width:28px;height:28px;border:2px solid #767475;display: inline-block;position:relative;top:8px;cursor:pointer;}
+.content .form ul li .true_current{background: url(../img/register_true.PNG) no-repeat center center;}/*点击同意注册协议背景*/
+.content .form ul li .true a{display: inline-block;font:24px/40px '微软雅黑';margin-left: 20px;}
+.content .form ul li .btn_reg{margin-top: 35px;display: inline-block;}
+.content .form ul li:first-child+li+li+li+li+li+li+li+li+li+li+li+li+li{text-align:center;}
+.content .form ul li:first-child+li+li+li+li+li+li+li+li+li+li+li+li+li input{padding:20px 100px;background: red;display: inline-block;color:#fff;font-size:28px;height:80px;width:350px;border:none;cursor:pointer;}

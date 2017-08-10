@@ -1,0 +1,27 @@
+.header{border:none;}
+.header .center{width:1200px;margin: 0 auto;border-bottom:4px solid #333;}
+.header .center .logo{display: inline-block;border-right:2px solid #999;padding:30px 10px 10px;margin: 3px 0;}
+.header .center h4,.header .center h5{display: inline-block;}
+.header .center h4{font:30px '微软雅黑';}
+.header .center h5{font:18px '微软雅黑';float:right;margin-top:65px;}
+.header .center h5 a{border:1px solid #333;padding:3px 5px;}
+.header .center h5 a:hover{color:#ca1c12;}
+
+.content{background: url(../img/login_backg.png) no-repeat center center;height:1200px;background-size:100% 100%;margin: 75px 0 40px 0;}
+.content .login{margin: 0 auto;width:1200px;}
+.content .login ul li{position:relative;}
+.content .login ul{background: rgba(255,255,255,.8);width:450px;padding:75px;float:right;margin-top: 250px;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#80ffffff,endColorstr=#80ffffff);}
+.content .login ul li input{width:400px;height:45px;font:16px/45px '微软雅黑';border:1px solid #333;padding-left:50px;margin-bottom: 85px;}
+.content .login ul li:first-child span i{color:#fe0404;font-size:24px;}
+.content .login ul li:first-child span{font-size:18px;}
+.content .login ul li:first-child+li input{background: url(../img/login_name.png) no-repeat left center;background-position-x: 8px;}
+.content .login ul li:first-child+li i{position:absolute;top: 45px;left:50px;}
+.content .login ul li:first-child+li+li i{position:absolute;top: 45px;left:50px;}
+.content .login ul li:first-child+li+li input{background: url(../img/login_pass.png) no-repeat left center;background-position-x: 8px;}
+.content .login ul li:first-child+li+li+li span{display: inline-block;height:20px;width:20px;background: url(../img/login_check.png) no-repeat center center;position:relative;top:5px;cursor: pointer;}
+.content .login ul li:first-child+li+li+li .true_current{background: url(../img/register_true2.png) no-repeat center center;}
+.content .login ul li:first-child+li+li+li i{font:18px '微软雅黑';color:#333;cursor: pointer;margin-left: 10px;}
+.content .login ul li:first-child+li+li+li a{float:right;}
+li:first-child+li+li+li a:hover{color:#ca1c12;}
+.content .login ul li:first-child+li+li+li+li{margin-top: 110px;text-align: center;}
+.content .login ul li:first-child+li+li+li+li input{background: red;color:#fff;font-size:36px;border:none;line-height:50px;padding:20px 0;height:100px;cursor:pointer;}

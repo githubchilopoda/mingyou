@@ -1,0 +1,57 @@
+.content{width:1200px;margin: 25px auto 0;}
+.content .sidebar{float:left;}
+.content .main{float:left;margin-left: 20px;}
+.content .main .search{width:695px;border:1px solid #333;height:64px;}
+.content .main .search a{display: inline-block;float:right;}
+.content .main .search input{height:62px;line-height: 62px;font-size:24px;padding:0 10px;width:80%;border:none;text-align: center;}
+
+.main{width:869px;}
+.main .column li a{font:24px '微软雅黑';}
+.main .column li{display: inline-block;margin-left:40px;padding:40px 0;}
+.main .column .current a{color:#ca1c12;}
+
+.list_tle{border:1px solid #333;padding:0 20px;}
+.list_tle span{float:right;margin-left: 75px;font:18px/40px '微软雅黑';width:75px;}
+
+
+/*以下为商品列表 表格样式*/
+.main .column_list>.current_list{display: block;}
+.order_list{display: none;}
+.order_list li{border:1px solid #333;margin-bottom: 35px;}
+.order_list li thead th{border-bottom:1px solid #333;padding:0 10px;}
+.order_list li thead th span{font:14px/35px '微软雅黑';margin-right: 50px;}
+.order_list li tr{border:1px solid red;font-size:14px;}
+.order_list li table tbody tr td{text-align: center;}
+.order_list li tbody tr h5{display: inline-block;font-size:14px;margin-top: 40px;}
+.order_list li tbody tr td a{font:14px/36px '微软雅黑';}
+.order_list li tbody tr td a:hover{color:#ca1c12;}
+.order_list li table{width:100%;}
+.order_list li table tbody img{float:left;margin: 10px 10px 10px 20px;}
+.order_list li table tbody tr td:first-child{width:35%;}
+.order_list li tbody tr td:first-child+td{width:10%;}
+.order_list li tbody tr td:first-child+td+td{width:25%;}
+.order_list li tbody tr td:first-child+td+td+td{width:13%}
+.order_list li tbody tr td:first-child+td+td+td{width:17%;}
+/*以上为商品列表 表格样式 end*/
+
+/*页面样式 page*/
+.page{text-align: center;margin: 70px 0;}
+.page ul{display: inline-block;}
+.page li{float:left;margin-right: 35px;}
+.page li a{border:1px solid #333;padding:5px 10px;}
+.page li a:hover{border:1px solid transparent;color:#ca1c12;}
+.page li:first-child+li+li+li+li a{border:none;}
+.page .current a{border:1px solid transparent;color:#ca1c12;}
+.page li:first-child a,.page li:first-child+li+li+li+li+li a{border:1px solid #ca1c12;color:#ca1c12;}
+
+
+
+
+
+
+
+
+
+
+
+

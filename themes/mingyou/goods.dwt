@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="###">
+    <meta name="description" content="公司介绍">
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <link rel="stylesheet" href="{$mingyou}css/pro_details.css">
+    <link rel="stylesheet" href="{$mingyou}css/public.css">
+    <title>产品详情</title>
+    <script src="{$mingyou}js/jquery.min.js"></script>
+    <script src="{$mingyou}js/public.js"></script>
+    <script src="{$mingyou}js/pro_details.js"></script>
+    <script src="{$mingyou}js/city.js"></script>
+	{insert_scripts files='common.js'}
+	{insert_scripts files='transport_jquery.js,utils.js'}
+	
+</head>
+<body onload="bigimg()">
+<!-- 头部-->
+<!-- #BeginLibraryItem "/library/page_header1.lbi" --><!-- #EndLibraryItem -->
+<!--头部 end-->
+<div class="content">
+    <div class="content_top clearfix">
+        <div class="top_box">
+            <div id="box">
+                <div class="oimg"></div>
+                <div class="pic">
+                    <img src="{$goods.goods_img}" alt="{$goods.goods_name|escape:html}">
+                </div>
+                <div id="move"></div>
+                <div id="bimg">
+                    <img id="b_bimg" src="{$goods.goods_img}" alt="{$goods.goods_name|escape:html}">
+                </div>
+            </div>
+            <ul class="list_pic">
+			{foreach from=$pictures item=picture name=no}
+                <li class="current"><a href="{$picture.img_url}"><img src="{$picture.img_url}" alt="{$picture.img_url}"></a></li>
+			{/foreach}	
+            
+            </ul>
+        </div>
+        <div class="pro_details">
+            <h5><a href="###">{$goods.goods_style_name}</a></h5>
+            <div class="pro_text">
+                <p>价 &nbsp; 格<s>{$goods.market_price}</s></p>
+                <p>促销价<span>{$goods.shop_price_formated}</span></p>
+                <div>
+                   
+                </div>
+            </div>
+            <div class="sales_val">
+                <ul>
+                    <li><a href="###">月销量{$goods.cum_sales}</a></li>
+                    <li><a href="comment.html">累计评价{$goods.is_num}</a></li>
+                    <li><a href="###">商城积分{$goods.integral}</a></li>
+                </ul>
+            </div>
+            <div class="color_list">
+                <span>颜色分类</span>
+					
+                <ul>	
+				{foreach from=$specification item=spec key=spec_key}
+				{foreach from=$spec.values item=val key=key}
+				{if $key eq 0}
+				<li class="current">{$val.label}<input name="spec_{$spec_key}" type="hidden" value="{$value.id}"></li>
+				{else}
+				<li>{$val.label}<input name="spec_{$spec_key}"  type="hidden" value="{$value.id}"></li>
+				{/if}
+				{/foreach}  
+				{/foreach}	
+                   
+                </ul>
+            </div>
+            <div class="input_val">
+                <span>数量</span>
+                <input type="text" class="num" value="1">
+                <input type="hidden" value="10" class="max_value">
+                <div class="input_btn">
+                    <a href="###" class="add"><img src="{$mingyou}img/pro_add.png" alt="pro_add.png"></a>
+                    <a href="###" class="down"><img src="{$mingyou}img/pro_down.png" alt="pro_down.png"></a>
+                </div>
+                <div class="btn">
+                    <a href="javascript:addToCart({$goods.goods_id})" class="shop_btn"><img src="{$mingyou}img/pro_shop.png" alt="pro_shop.png"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--中心 点击轮播-->
+    <div class="center_box">
+        <div class="tle_list">
+            <ul>
+                <li class="current"><a href="###">精选搭配</a></li>
+                <li><a href="###">豆浆机</a></li>
+                <li><a href="###">榨汁机</a></li>
+                <li><a href="###">电烤箱</a></li>
+                <li><a href="###">微波炉</a></li>
+            </ul>
+        </div>
+        <div class="pro_pic clearfix">
+            <div class="box_list current">
+                <div class="pic clearfix">
+                    <div class="pic_box"></div>
+                    <ul id='taocan'>
+                        <li>
+                            <ul class="clearfix block">
+                            {foreach from=$related_goods item=vo key=key}
+                                {if $key gt 133 and $key lt 138}
+                                <li>
+                                    <a href="{$vo.url}" class="pic_meal"><img  height="206" width="209" src="{$vo.goods_img}" alt="pro_center_box1.png"></a>
+                                    <div><a href="{$vo.url}" class="content_meal"><span>{$vo.goods_name}</span><br/><i>{$vo.shop_price}</i></a></div>
+                                </li>
+                                {/if}
+                             {/foreach}   
+                            </ul>
+                        </li>
+                        <li>
+                            <ul class="clearfix block">
+                                 {foreach from=$related_goods item=vo key=key}
+                                 {if $key gt 137 and $key lt 142}
+                                <li>
+                                    <a href="{$vo.url}" class="pic_meal"><img height="206" width="209" src="{$vo.goods_img}" alt="pro_center_box1.png"></a>
+                                    <div><a href="{$vo.url}" class="content_meal"><span>{$vo.goods_name}</span><br/><i>{$vo.shop_price}</i></a></div>
+                                </li>
+                                {/if}
+                             {/foreach}  
+                            </ul>
+                        </li>
+                        <li>
+                            <ul class="clearfix block">
+                                {foreach from=$related_goods item=vo key=key}
+                                {if $key gt 141}
+                                <li>
+                                    <a href="{$vo.url}" class="pic_meal"><img  height="206" width="209" src="{$vo.goods_img}" alt="pro_center_box1.png"></a>
+                                    <div><a href="{$vo.url}" class="content_meal"><span>{$vo.goods_name}</span><br/><i>{$vo.shop_price}</i></a></div>
+                                </li>
+                                {/if}
+                             {/foreach}  
+                            </ul>
+                        </li>
+                    </ul>
+                    <a href="###" class="btn_left"><img src="{$mingyou}img/pro_center_left.png" alt="pro_center_left.png"></a>
+                    <a href="###" class="btn_right"><img src="{$mingyou}img/pro_center_right.png" alt="pro_center_right.png"></a>
+                </div>
+                <div class="pic_btn">
+                    <p>套餐价：<strong class="total_meal">10000.00</strong></p>
+                    <s>价格：<strong  class="old_meal">12669.0</strong></s>
+                    <a id="df" class="meal">加入购物车</a><br/>
+                    <i class="del">清除全部</i>
+                </div>
+<script type="text/javascript">
+	var a=0;
+	$('#df').click(function(){
+		$('#taocan li ul').each(function(){
+			<!-- $(this).child().each(function(){ -->
+				<!-- a+=substring($(this).child('div a i').text()); -->
+			<!-- }) -->
+			alert(a);
+			
+		})
+	})
+	
+</script>				
+            </div>
+            <div class="box_list">
+                <div class="pic clearfix">
+                    <div class="pic_box"></div>
+                    <ul>
+                        <li>
+                            <ul class="clearfix block">
+                                <li>
+                                    <a href="pro_details.html" class="pic_meal"><img src="{$mingyou}img/center_box2.png" alt="center_box2.png"></a>
+                                    <div><a href="pro_details.html" class="content_meal"><span>科沃斯（地宝智能摄像头管家机器人</span><br/><i>￥4990.00</i></a></div>
+                                </li>
+                                <li>
+                                    <a href="pro_details.html"><img src="{$mingyou}img/pro_center_box2.png" alt="pro_center_box2.png"></a>
+                                    <div><a href="pro_details.html"><span>科沃斯（地宝智能摄像头管家机器人</span><br/><i>￥4990.00</i></a></div>
+                                </li>
+                                <li>
+                                    <a href="pro_details.html"><img src="{$mingyou}img/pro_center_box3.png" alt="pro_center_box3.png"></a>
+                                    <div><a href="pro_details.html"><span>科沃斯（地宝智能摄像头管家机器人</span><br/><i>￥4990.00</i></a></div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul class="clearfix block">
+                                <li>
+                                    <a href="pro_details.html" class="pic_meal"><img src="{$mingyou}img/center_box2.png" alt="center_box2.png"></a>
+                                    <div><a href="pro_details.html" class="content_meal"><span>科沃斯（地宝智能摄像头管家机器人</span></a><br/><i>￥4990.00</i></div>
+                                </li>
+                                <li>
+                                    <a href="pro_details.html"><img src="{$mingyou}img/pro_center_box2.png" alt="pro_center_box2.png"></a>
+                                    <div><a href="pro_details.html"><span>科沃斯（地宝智能摄像头管家机器人</span><br/><i>￥4990.00</i></a></div>
+                                </li>
+                                <li>
+                                    <a href="pro_details.html"><img src="{$mingyou}img/pro_center_box3.png" alt="pro_center_box3.png"></a>
+                                    <div><a href="pro_details.html"><span>科沃斯（地宝智能摄像头管家机器人</span><br/><i>￥4990.00</i></a></div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul class="clearfix block">
+                                <li>
+                                    <a href="pro_details.html" class="pic_meal"><img src="{$mingyou}img/center_box2.png" alt="center_box2.png"></a>
+                                    <div><a href="pro_details.html" class="content_meal"><span>科沃斯（地宝智能摄像头管家机器人</span></a><br/><i>￥4990.00</i></div>
+                                </li>
+                                <li>
+                                    <a href="pro_details.html"><img src="{$mingyou}img/pro_center_box2.png" alt="pro_center_box2.png"></a>
+                                    <div><a href="pro_details.html"><span>科沃斯（地宝智能摄像头管家机器人</span><br/><i>￥4990.00</i></a></div>
+                                </li>
+                                <li>
+                                    <a href="pro_details.html"><img src="{$mingyou}img/pro_center_box3.png" alt="pro_center_box3.png"></a>
+                                    <div><a href="pro_details.html"><span>科沃斯（地宝智能摄像头管家机器人</span><br/><i>￥4990.00</i></a></div>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <a href="###" class="btn_left"><img src="{$mingyou}img/pro_center_left.png" alt="pro_center_left.png"></a>
+                    <a href="###" class="btn_right"><img src="{$mingyou}img/pro_center_right.png" alt="pro_center_right.png"></a>
+                </div>
+                <div class="pic_btn">
+                    <p>套餐价：<strong class="total_meal">10000.00</strong></p>
+                    <s>价格：<strong  class="old_meal">12669.0</strong></s>
+                    <a href="###" class="meal">加入购物车</a><br/>
+                    <i class="del">清除全部</i>
+                </div>
+            </div>
+            <div class="box_list">
+                <div class="pic clearfix">
+                    <div class="pic_box"></div>
+                    <ul>
+                        <li>
+                            <ul class="clearfix block">
+                                <li>
+                                    <a href="pro_details.html" class="pic_meal"><img src="{$mingyou}img/center_box3.png" alt="center_box3.png"></a>
+                                    <div><a href="pro_details.html" class="content_meal"><span>科沃斯（地宝智能摄像头管家机器人</span><br/><i>￥4990.00</i></a></div>
+                                </li>
+                                <li>
+                                    <a href="pro_details.html"><img src="{$mingyou}img/pro_center_box2.png" alt="pro_center_box2.png"></a>
+                                    <div><a href="pro_details.html"><span>科沃斯（地宝智能摄像头管家机器人</span><br/><i>￥4990.00</i></a></div>
+                                </li>
+                                <li>
+                                    <a href="pro_details.html"><img src="{$mingyou}img/pro_center_box3.png" alt="pro_center_box3.png"></a>
+                                    <div><a href="pro_details.html"><span>科沃斯（地宝智能摄像头管家机器人</span><br/><i>￥4990.00</i></a></div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul class="clearfix block">
+                                <li>
+                                    <a href="pro_details.html" class="pic_meal"><img src="{$mingyou}img/center_box3.png" alt="center_box3.png"></a>
+                                    <div><a href="pro_details.html" class="content_meal"><span>科沃斯（地宝智能摄像头管家机器人</span><br/><i>￥4990.00</i></a></div>
+                                </li>
+                                <li>
+                                    <a href="pro_details.html"><img src="{$mingyou}img/pro_center_box2.png" alt="pro_center_box2.png"></a>
+                                    <div><a href="pro_details.html"><span>科沃斯（地宝智能摄像头管家机器人</span><br/><i>￥4990.00</i></a></div>
+                                </li>
+                                <li>
+                                    <a href="pro_details.html"><img src="{$mingyou}img/pro_center_box3.png" alt="pro_center_box3.png"></a>
+                                    <div><a href="pro_details.html"><span>科沃斯（地宝智能摄像头管家机器人</span><br/><i>￥4990.00</i></a></div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul class="clearfix block">
+                                <li>
+                                    <a href="pro_details.html" class="pic_meal"><img src="{$mingyou}img/center_box3.png" alt="center_box3.png"></a>
+                                    <div><a href="pro_details.html" class="content_meal">科沃斯（地宝智能摄像头管家机器人<br/><i>￥4990.00</i></a></div>
+                                </li>
+                                <li>
+                                    <a href="pro_details.html"><img src="{$mingyou}img/pro_center_box2.png" alt="pro_center_box2.png"></a>
+                                    <div><a href="pro_details.html">科沃斯（地宝智能摄像头管家机器人<br/><i>￥4990.00</i></a></div>
+                                </li>
+                                <li>
+                                    <a href="pro_details.html"><img src="{$mingyou}img/pro_center_box3.png" alt="pro_center_box3.png"></a>
+                                    <div><a href="pro_details.html">科沃斯（地宝智能摄像头管家机器人<br/><i>￥4990.00</i></a></div>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <a href="###" class="btn_left"><img src="{$mingyou}img/pro_center_left.png" alt="pro_center_left.png"></a>
+                    <a href="###" class="btn_right"><img src="{$mingyou}img/pro_center_right.png" alt="pro_center_right.png"></a>
+                </div>
+                <div class="pic_btn">
+                    <p>套餐价：<strong class="total_meal">10000.00</strong></p>
+                    <s>价格：<strong  class="old_meal">12669.0</strong></s>
+                    <a href="###" class="meal">加入购物车</a><br/>
+                    <i class="del">清除全部</i>
+                </div>
+            </div>
+            <div class="box_list">
+                <div class="pic clearfix">
+                    <div class="pic_box"></div>
+                    <ul>
+                        <li>
+                            <ul class="clearfix block">
+                                <li>
+                                    <a href="pro_details.html" class="pic_meal"><img src="{$mingyou}img/center_box4.png" alt="center_box4.png"></a>
+                                    <div><a href="pro_details.html" class="content_meal"><span>科沃斯（地宝智能摄像头管家机器人</span><br/><i>￥4990.00</i></a></div>
+                                </li>
+                                <li>
+                                    <a href="pro_details.html"><img src="{$mingyou}img/pro_center_box2.png" alt="pro_center_box2.png"></a>
+                                    <div><a href="pro_details.html"><span>科沃斯（地宝智能摄像头管家机器人</span><br/><i>￥4990.00</i></a></div>
+                                </li>
+                                <li>
+                                    <a href="pro_details.html"><img src="{$mingyou}img/pro_center_box3.png" alt="pro_center_box3.png"></a>
+                                    <div><a href="pro_details.html"><span>科沃斯（地宝智能摄像头管家机器人</span><br/><i>￥4990.00</i></a></div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul class="clearfix block">
+                                <li>
+                                    <a href="pro_details.html" class="pic_meal"><img src="{$mingyou}img/center_box4.png" alt="center_box4.png"></a>
+                                    <div><a href="pro_details.html" class="content_meal"><span>科沃斯（地宝智能摄像头管家机器人</span><br/><i>￥4990.00</i></a></div>
+                                </li>
+                                <li>
+                                    <a href="pro_details.html"><img src="{$mingyou}img/pro_center_box2.png" alt="pro_center_box2.png"></a>
+                                    <div><a href="pro_details.html"><span>科沃斯（地宝智能摄像头管家机器人</span><br/><i>￥4990.00</i></a></div>
+                                </li>
+                                <li>
+                                    <a href="pro_details.html"><img src="{$mingyou}img/pro_center_box3.png" alt="pro_center_box3.png"></a>
+                                    <div><a href="pro_details.html"><span>科沃斯（地宝智能摄像头管家机器人</span><br/><i>￥4990.00</i></a></div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul class="clearfix block">
+                                <li>
+                                    <a href="pro_details.html" class="pic_meal"><img src="{$mingyou}img/center_box4.png" alt="center_box4.png"></a>
+                                    <div><a href="pro_details.html" class="content_meal">科沃斯（地宝智能摄像头管家机器人<br/><i>￥4990.00</i></a></div>
+                                </li>
+                                <li>
+                                    <a href="pro_details.html"><img src="{$mingyou}img/pro_center_box2.png" alt="pro_center_box2.png"></a>
+                                    <div><a href="pro_details.html">科沃斯（地宝智能摄像头管家机器人<br/><i>￥4990.00</i></a></div>
+                                </li>
+                                <li>
+                                    <a href="pro_details.html"><img src="{$mingyou}img/pro_center_box3.png" alt="pro_center_box3.png"></a>
+                                    <div><a href="pro_details.html">科沃斯（地宝智能摄像头管家机器人<br/><i>￥4990.00</i></a></div>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <a href="###" class="btn_left"><img src="{$mingyou}img/pro_center_left.png" alt="pro_center_left.png"></a>
+                    <a href="###" class="btn_right"><img src="{$mingyou}img/pro_center_right.png" alt="pro_center_right.png"></a>
+                </div>
+                <div class="pic_btn">
+                    <p>套餐价：<strong class="total_meal">10000.00</strong></p>
+                    <s>价格：<strong  class="old_meal">12669.0</strong></s>
+                    <a href="###" class="meal">加入购物车</a><br/>
+                    <i class="del">清除全部</i>
+                </div>
+            </div>
+            <div class="box_list">
+                <div class="pic clearfix">
+                    <div class="pic_box"></div>
+                    <ul>
+                        <li>
+                            <ul class="clearfix block">
+                                <li>
+                                    <a href="pro_details.html" class="pic_meal"><img src="{$mingyou}img/center_box5.png" alt="center_box5.png"></a>
+                                    <div><a href="pro_details.html" class="content_meal"><span>科沃斯（地宝智能摄像头管家机器人</span><br/><i>￥4990.00</i></a></div>
+                                </li>
+                                <li>
+                                    <a href="pro_details.html"><img src="{$mingyou}img/pro_center_box2.png" alt="pro_center_box2.png"></a>
+                                    <div><a href="pro_details.html"><span>科沃斯（地宝智能摄像头管家机器人</span><br/><i>￥4990.00</i></a></div>
+                                </li>
+                                <li>
+                                    <a href="pro_details.html"><img src="{$mingyou}img/pro_center_box3.png" alt="pro_center_box3.png"></a>
+                                    <div><a href="pro_details.html"><span>科沃斯（地宝智能摄像头管家机器人</span><br/><i>￥4990.00</i></a></div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul class="clearfix block">
+                                <li>
+                                    <a href="pro_details.html" class="pic_meal"><img src="{$mingyou}img/center_box5.png" alt="center_box5.png"></a>
+                                    <div><a href="pro_details.html" class="content_meal"><span>科沃斯（地宝智能摄像头管家机器人</span><br/><i>￥4990.00</i></a></div>
+                                </li>
+                                <li>
+                                    <a href="pro_details.html"><img src="{$mingyou}img/pro_center_box2.png" alt="pro_center_box2.png"></a>
+                                    <div><a href="pro_details.html"><span>科沃斯（地宝智能摄像头管家机器人</span><br/><i>￥4990.00</i></a></div>
+                                </li>
+                                <li>
+                                    <a href="pro_details.html"><img src="{$mingyou}img/pro_center_box3.png" alt="pro_center_box3.png"></a>
+                                    <div><a href="pro_details.html"><span>科沃斯（地宝智能摄像头管家机器人</span><br/><i>￥4990.00</i></a></div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul class="clearfix block">
+                                <li>
+                                    <a href="pro_details.html" class="pic_meal"><img src="{$mingyou}img/center_box5.png" alt="center_box5.png"></a>
+                                    <div><a href="pro_details.html" class="content_meal"><span>科沃斯（地宝智能摄像头管家机器人</span><br/><i>￥4990.00</i></a></div>
+                                </li>
+                                <li>
+                                    <a href="pro_details.html"><img src="{$mingyou}img/pro_center_box2.png" alt="pro_center_box2.png"></a>
+                                    <div><a href="pro_details.html"><span>科沃斯（地宝智能摄像头管家机器人</span><br/><i>￥4990.00</i></a></div>
+                                </li>
+                                <li>
+                                    <a href="pro_details.html"><img src="{$mingyou}img/pro_center_box3.png" alt="pro_center_box3.png"></a>
+                                    <div><a href="pro_details.html"><span>科沃斯（地宝智能摄像头管家机器人</span><br/><i>￥4990.00</i></a></div>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+				
+                    <a href="###" class="btn_left"><img src="{$mingyou}img/pro_center_left.png" alt="pro_center_left.png"></a>
+                    <a href="###" class="btn_right"><img src="{$mingyou}img/pro_center_right.png" alt="pro_center_right.png"></a>
+                </div>
+                <div class="pic_btn">
+                    <p>套餐价：<strong class="total_meal">10000.00</strong></p>
+                    <s>价格：<strong  class="old_meal">12669.0</strong></s>
+                    <a href="###" class="meal">加入购物车</a><br/>
+                    <i class="del">清除全部</i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--中心点击 轮播 end-->
+    <div class="content_bottom clearfix">
+        <div class="bottom_box">
+            <!--左侧轮产品-->
+            <h5>热门商品</h5>
+            <div id="box_pic">
+                <ul class="bottom_box_pic">
+                    <li>
+                        <a href="pro_details.html"><img src="{$mingyou}img/bottom_box_pic1.png" alt="bottom_box_pic1.png"></a>
+                        <div><a href="pro_details.html">美国IROOMBA 860扫地机器人全自动家用智能器</a><br/><i>￥2399.00</i></div>
+                    </li>
+                    <li>
+                        <a href="pro_details.html"><img src="{$mingyou}img/bottom_box_pic1.png" alt="bottom_box_pic1.png"></a>
+                        <div><a href="pro_details.html">美国IROOMBA 860扫地机器人全自动家用智能器</a><br/><i>￥2399.00</i></div>
+                    </li>
+                    <li>
+                        <a href="pro_details.html"><img src="{$mingyou}img/bottom_box_pic1.png" alt="bottom_box_pic1.png"></a>
+                        <div><a href="pro_details.html">美国IROOMBA 860扫地机器人全自动家用智能器</a><br/><i>￥2399.00</i></div>
+                    </li>
+                    <li>
+                        <a href="pro_details.html"><img src="{$mingyou}img/bottom_box_pic1.png" alt="bottom_box_pic1.png"></a>
+                        <div><a href="pro_details.html">美国IROOMBA 860扫地机器人全自动家用智能器</a><br/><i>￥2399.00</i></div>
+                    </li>
+                    <li>
+                        <a href="pro_details.html"><img src="{$mingyou}img/bottom_box_pic1.png" alt="bottom_box_pic1.png"></a>
+                        <div><a href="pro_details.html">美国IROOMBA 860扫地机器人全自动家用智能器</a><br/><i>￥2399.00</i></div>
+                    </li>
+                    <li>
+                        <a href="pro_details.html"><img src="{$mingyou}img/bottom_box_pic1.png" alt="bottom_box_pic1.png"></a>
+                        <div><a href="pro_details.html">美国IROOMBA 860扫地机器人全自动家用智能器</a><br/><i>￥2399.00</i></div>
+                    </li>
+                </ul>
+            </div>
+            <a href="###" class="top"><img src="{$mingyou}img/pro_top_btn.png" alt="pro_top_btn.png"></a>
+            <a href="###" class="bottom"><img src="{$mingyou}img/pro_bottom_btn.png" alt="pro_bottom_btn.png"></a>
+        </div>
+        <!--左侧轮播产品 end-->
+        <div class="warp">
+            <ul class="list_van">
+                <li class="current"><a href="###">商品详情</a></li>
+                <li><a href="###">累计评价{$goods.is_num}</a></li>
+                <li><a href="###">服务详情</a></li>
+            </ul>
+            <div class="warp_list">
+                <div class="list current">
+                    {$goods.goods_desc}
+                </div>
+                <div class="list_comment">
+                    <!-- #BeginLibraryItem "/library/comments.lbi" -->
+
+{insert_scripts files='transport_jquery.js,utils.js'}
+<div id="ECS_COMMENT"> {* ECSHOP 提醒您：动态载入comments_list.lbi，显示评论列表和评论表单 *}{insert name='comments' type=$type id=$id}</div>
+
+ <!-- #EndLibraryItem -->
+                </div>
+                <div>栏目跟新中。。。。。。。</div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+<!--底部-->
+<!-- #BeginLibraryItem "/library/page_footer1.lbi" --><!-- #EndLibraryItem -->
+<!--底部  end-->
+</body>
+</html>

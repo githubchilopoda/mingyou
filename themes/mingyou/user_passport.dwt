@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="###">
+    <meta name="description" content="公司介绍">
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <link rel="stylesheet" href="{$mingyou}css/public.css">
+    <link rel="stylesheet" href="{$mingyou}css/login.css">
+    <title>登录</title>
+    <script src="{$mingyou}js/jquery.min.js"></script>
+    <script src="{$mingyou}js/login.js"></script>
+</head>
+<body>
+{if $action eq 'login'}
+<!--头部-->
+<div class="header">
+    <div class="center">
+        <div class="logo"><a href="index.html"><img src="{$mingyou}img/logo.png" alt="logo.png"></a></div>
+        <h4>欢迎注册名友网站</h4>
+        <h5>没有账号，请 <a href="/mingyou/user.php?act=register">注册</a></h5>
+    </div>
+</div>
+<!--头部 end-->
+<!--中部内容-->
+<div class="content">
+    <div class="login">
+        <form  name="formLogin" action="user.php" method="post" onSubmit="return userLogin()">
+            <ul>
+                <li><span><i>登录</i>名友商城</span></li>
+                <li><input type="text" class="name" value="会员名"><i></i></li>
+                <li><input type="text" class="pass" value="密码"><i></i></li>
+                <li><label><input type="checkbox" value="1" name="remember" id="remember" /><i>下次自动登录</i></label><a href="user.php?act=qpassword_name">忘记密码？</a></li>
+                <li>
+				 <input type="hidden" name="act" value="act_login" />
+            <input type="hidden" name="back_act" value="{$back_act}" />
+				<input type="submit" class="login_btn" value="立即登录"></li>
+            </ul>
+        </form>
+    </div>
+</div>
+{/if}
+
+<!--中部内容 end-->
+{if $action eq 'register'}
+{insert_scripts files='utils.js'}
+<!--头部-->
+<div class="header">
+    <div class="center">
+        <div class="logo"><a href="index.html"><img src="img/logo.png" alt="logo.png"></a></div>
+        <h4>欢迎注册名友网站</h4>
+        <h5>已有账号，请 <a href="/mingyou/user.php">登录</a></h5>
+    </div>
+</div>
+<!--头部 end-->
+<!--中部内容-->
+<div class="content">
+    <div class="form clearfix">
+        <form action="user.php" method="post" name="formUser" onsubmit="return register()";>
+            <ul>
+                <li>会员名</li>
+                <li><input type="text" class="username" name='username' value="请设置会员名" onblur="is_registered(this.value);" ><i></i></li>
+                <li>密码</li>
+                <li><input type="text" class="pass" value="请设置密码" name='password' type="password" id="password1" onblur="check_password(this.value);" onkeyup="checkIntensity(this.value)" ><i></i></li>
+                <li>确认密码</li>
+                <li><input type="password" name='confirm_password' value="请确认密码" onblur="check_conform_password(this.value);"  ><i></i></li>
+                <li>E-mail</li>
+                <li><input type="text" class="email" name="email"  value="请输入邮箱"  id="email" onblur="checkEmail(this.value);"  ><i></i></li>
+                <li>手机号</li>
+                <li><input type="text" class="op" name="extend_field5" value="请输入手机号"><i></i></li>
+                <li>验证码</li>
+                <li><input type="text" class="text_code" value="请输入验证码" id="text"><input type="button" id="checkCode" value="" onclick="createCode()"><a href="###" class="on" onclick="createCode()"><strong>看不清？</strong>换一个</a></li>
+                <li><label  class="true"><span class="min_box"> </span><a href="###">阅读并接受《名友商城用户协议》</a></label></li>
+                <li><input type="submit" class="btn_reg" value="立即注册"></li>
+            </ul>
+        </form>
+    </div>
+</div>
+{/if}
+<!--中部内容 end-->
+<!--底部-->
+<!-- #BeginLibraryItem "/library/page_footer1.lbi" --><!-- #EndLibraryItem -->
+<!--底部  end-->
+</body>
+</html>

@@ -1,0 +1,81 @@
+<div class="header">
+    <!--顶部-->
+    <div class="header_top">
+        <div class="top_center">
+            <span><i>欢迎来到名友商城</i></span>
+            <ul class="top_list">
+			{foreach name=nav_top_list from=$navigator_list.top item=nav} 
+				<li><a href="{$nav.url}">{$nav.name}</a></li>
+			{/foreach}
+                <!-- <li><a href="shop_cart.html">我的购物车</a></li> -->
+                <!-- <li><a href="###">我关注的产品</a></li> -->
+                <!-- <li><a href="###">客户服务</a></li> -->
+            </ul>
+            <a href="user.php?=register">登录</a>
+            <a href="user.php">注册</a>
+        </div>
+    </div>
+    <!--顶部 end-->
+    <div class="header_main">
+        <a href="index.html"><img src="{$mingyou}img/logo.png" alt="logo.png"></a>
+        <div class="search">
+            <form id="searchForm"  name="searchForm" method="get" action="search.php" onSubmit="return checkSearchForm()">
+                <input name="keywords" type="text" id="keyword" value="搜家电" class="header_input">
+                <input type="submit"  name="imageField" class="submit" value="">
+            </form>
+	<script type="text/javascript">
+    {literal}
+ 
+    function checkSearchForm()
+    {
+        if(document.getElementById('keyword').value)
+        {
+            return true;
+        }
+        else
+        {
+            alert("{$lang.no_keywords}");
+            return false;
+        }
+    }
+
+    {/literal}
+    </script>
+        </div>
+        <div class="search_list">
+            <ul>
+			 {foreach from=$searchkeywords item=val}
+			 <li><a href="search.php?keywords={$val|escape:url}">{$val}</a></li>
+			 {/foreach}
+              
+            </ul>
+        </div>
+        <div class="van clearfix">
+            <a href="###" id="menu"><img src="{$mingyou}img/top_menu.png" alt="top_menu.png"></a>
+            <ul class="van_list">
+			{foreach name=nav_middle_list from=$navigator_list.middle item=nav} 
+                <li {if $nav.active eq 1} class="current"{/if}><a href="{$nav.url}">{$nav.name}</a></li>
+			{/foreach}	
+               
+            </ul>
+            <div class="menu">
+                <ul>
+				{foreach from=$categories item=cat name=no}
+                    <li>
+                        <dl>
+						
+						<dt><a href="{$cat.url}">{$cat.name|escape:html}</a></dt>
+						{foreach from=$cat.cat_id item=child}
+                             <dd><a href="{$child.url}">{$child.name|escape:html}</a></dd>
+						{/foreach}	
+                           
+                            
+                        </dl>
+                    </li>
+				{/foreach}
+                   
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

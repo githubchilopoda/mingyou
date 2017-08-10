@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="###">
+    <meta name="description" content="公司介绍">
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <link rel="stylesheet" href="{$mingyou}css/index.css">
+    <link rel="stylesheet" href="{$mingyou}css/public.css">
+    <title>首页</title>
+    <script src="{$mingyou}js/jquery.min.js"></script>
+    <script src="{$mingyou}js/index.js"></script>
+    <script src="{$mingyou}js/public.js"></script>
+</head>
+<body>
+<!-- 头部-->
+<!-- #BeginLibraryItem "/library/page_header1.lbi" --><!-- #EndLibraryItem -->
+<!--头部 end-->
+<!--banner-->
+<div class="banner">
+        <ul class="clearfix">
+		{foreach from=$flash name=myflash item=flash}
+            <li><a href="###"><img src="{$flash.src}" alt="banner1.png"></a></li>
+		{/foreach}	
+            <!-- <li><a href="###"><img src="{$mingyou}img/banner2.png" alt="banner2.png"></a></li> -->
+            <!-- <li><a href="###"><img src="{$mingyou}img/banner3.png" alt="banner3.png"></a></li> -->
+        </ul>
+        <ol>
+		  {foreach from=$flash name=no item=flash}
+			 <li>
+			
+			</li> 
+		   {/foreach}
+         
+        </ol>
+        <div class="btn_left"><a href="###"><img src="{$mingyou}img/banner_left.png" alt="banner_left.png"></a></div>
+        <div class="btn_right"><a href="###"><img src="{$mingyou}img/banner_right.png" alt="banner_right.png"></a></div>
+    </div>
+<!-- banner end-->
+<!--中部-->
+<div class="content">
+    <!--优惠卷-->
+    <div class="special">
+        <div class="pic">
+            <a href="product.html"><img src="{$mingyou}img/special_1.png" alt="special_1.png"></a>
+            <a href="###"><span>活动仅限:5.1-5.7</span></a>
+        </div>
+        <ul>
+            <li><a href="###"><img src="{$mingyou}img/special_2.png" alt="special_2.png"></a></li>
+            <li><a href="###"><img src="{$mingyou}img/special_3.png" alt="{$mingyou}img/special_3.png"></a></li>
+            <li><a href="###"><img src="{$mingyou}img/special_4.png" alt="{$mingyou}img/special_4.png"></a></li>
+            <li><a href="###"><img src="{$mingyou}img/special_5.png" alt="{$mingyou}img/special_5.png"></a></li>
+        </ul>
+    </div>
+    <!--优惠卷 end-->
+    <div class="title">
+        <h5>店铺爆款推荐产品</h5>
+        <hr/>
+        <span>I MAY NOT BE PREFECT ， BUT I'M ALWAYS ME 。</span>
+    </div>
+	
+    <!--爆款推荐产品-->
+    <div class="recommend clearfix">
+        <div class="re_pic">
+            <a href="pro_details.html"><img src="{$mingyou}img/recommend_pic1.png" alt="recommend_pic1.png"></a>
+        </div>
+        <ul>
+		{foreach from=$bk_goods item=goods name="promotion_foreach"}
+            <li>
+                <div class="left_text">
+                    <h4><a href="{$goods.url}">{$goods.name}</a></h4>
+                    <h6>The sweet thing is loving</h6>
+                    <h6>you everyday and to be loved</h6>
+                    <h6>by you as well 。</h6>
+                    <i>{$goods.market_price}</i>
+                    <a href="confirm.html">立即抢购</a>
+                </div>
+                <div class="right_pic"><a href="{$goods.url}"><img width='388' height='276' src="{$goods.goods_img}" alt="recommend_pic2.png"></a></div>
+            </li>
+		{/foreach}	
+          
+        </ul>
+    </div>
+    <!--推荐产品end-->
+    <!--公共 广告图1-->
+    <div class="index_pic">
+        <div class="warp clearfix">
+            <div class="text clearfix">
+                <h6><a href="pro_details.html">鸳鸯电火锅</a></h6>
+                <h5><a href="pro_details.html">领卷下单立省10元</a></h5>
+                <h4><a href="pro_details.html">鸳鸯火锅5L大容量 一锅两味 4-8人</a></h4>
+                <a href="###" class="coupon"><img src="{$mingyou}img/title_coupon.png" alt="title_coupon.png"></a>
+                <i>RMB活动价:198</i>
+                <a href="confirm.html" class="btn">立即抢购></a>
+            </div>
+            <div class="pic"><a href="pro_details.html"><img src="{$mingyou}img/index_title_pic.png" alt="{$mingyou}img/index_title_pic.png"></a></div>
+        </div>
+    </div>
+    <!--公共 广告图1end-->
+    <div class="title">
+        <h5>最新商品</h5>
+        <hr/>
+        <span>I MAY NOT BE PREFECT ， BUT I'M ALWAYS ME 。</span>
+    </div>
+    <!--最新产品-->
+    <div class="new_pro">
+        <div><a href="pro_details.html"><img src="{$mingyou}img/index_pro1.png" alt="index_pro1.png"></a></div>
+        <ul class="clearfix">
+		 {foreach from=$new_goods item=goods}
+            <li>
+                <div><a href="{$goods.url}"><img src="{$goods.goods_img}" alt="index_pro2.png"></a></div>
+                <a href="{$goods.url}"><span>{$goods.name}</span><span>抢滩登录价{$goods.promote_price}</span></a>
+            </li>
+		{/foreach}	
+           
+        </ul>
+    </div>
+    <!--最新产品 end-->
+    <!--公共 广告图2 -->
+    <div class="index_pic_two">
+        <div class="warp">
+            <div class="pic"><img src="{$mingyou}img/title_two_pic.png" alt="title_two_pic.png"></div>
+            <div class="text">
+                <h1><a href="pro_details.html">简约灵动 处处周到</a></h1>
+                <span>美的 M1-L213C 智能微波炉</span>
+                <ul>
+                    <li>21L容量</li>
+                    <li>智能菜单</li>
+                    <li>一键启动</li>
+                    <li>安全无菌</li>
+                </ul>
+                <a href="confirm.html">立即购买 ></a>
+                <i>低至<strong>569</strong>元</i>
+            </div>
+        </div>
+    </div>
+    <!--公共 广告图2 end-->
+    <div class="title">
+        <h5>爆款新品</h5>
+        <hr/>
+        <span>I MAY NOT BE PREFECT ， BUT I'M ALWAYS ME 。</span>
+    </div>
+    <!--爆款新品-->
+    <div class="hot_new_pro">
+        <div class="first_pic">
+            <a href="pro_details.html"><img src="{$mingyou}img/hot_pic1.png" alt="{$mingyou}img/hot_pic1.png"></a>
+            <div class="first_text">
+                <h2>— <a href="pro_details.html">整屋升温</a> —</h2>
+                <h3><a href="pro_details.html">美的镂空散热专利油订</a></h3>
+                <h1><a href="pro_details.html">取暖实力派</a></h1>
+            </div>
+        </div>
+        <ul class="clearfix">
+		{foreach from=$best_goods item=goods}
+            <li>
+                <a href="{$goods.url}"><span>{$goods.name}</span><br/><i>{$goods.shop_price}</i></a>
+                <a href="{$goods.url}"><img width="316" height="357" src="{$goods.goods_img}" alt="hot.png"></a>
+            </li>
+		{/foreach}	
+            
+        </ul>
+    </div>
+    <!--爆款新品 end-->
+    <!--公共 广告图3 -->
+    <div class="index_pic_three">
+        <div class="warp">
+            <div class="text">
+                <h1><a href="pro_details.html">美的塔扇电风扇</a></h1>
+                <h6><a href="pro_details.html">静音遥控 预约柔风</a></h6>
+                <h6><a href="pro_details.html">三挡风速可调节</a></h6>
+                <h6><a href="pro_details.html">时尚LED灯显示</a></h6>
+                <a href="pro_details.html">￥234.00</a>
+            </div>
+            <div class="pic"><a href="pro_details.html"><img src="{$mingyou}img/pic_three.png" alt="pic_three.png"></a></div>
+        </div>
+    </div>
+    <!--公共 广告图3 end-->
+    <div class="title">
+        <h5>推荐商品</h5>
+        <hr/>
+        <span>I MAY NOT BE PREFECT ， BUT I'M ALWAYS ME 。</span>
+    </div>
+    <!---->
+    <div class="recommend_list">
+        <ul class="clearfix">
+		{foreach from=$hot_goods item=goods}
+            <li>
+                <div><a href="{$goods.url}"><img width="287" height="387" src="{$goods.goods_img}" alt="recommend_list1.png"></a></div>
+                <a href="{$goods.url}"><span>{$goods.name}</span><i>抢购价{$goods.promote_price}</i></a>
+            </li>
+		{/foreach}	
+            
+        </ul>
+    </div>
+    <!---->
+</div>
+<!--中部 end-->
+<!--底部-->
+<!-- #BeginLibraryItem "/library/page_footer1.lbi" --><!-- #EndLibraryItem -->
+<!--底部  end-->
+</body>
+</html>

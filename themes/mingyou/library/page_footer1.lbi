@@ -1,0 +1,36 @@
+<div class="footer">
+    <div class="service">
+      <ul>
+          <li><h3><a href="###">品质保障</a></h3><span><a href="###">品质护航 购物无忧</a></span></li>
+          <li><h3><a href="###">七天无理由退货</a></h3><span><a href="###">为您提供售后无忧保障</a></span></li>
+          <li><h3><a href="###">特色服务体验</a></h3><span><a href="###">为您提供不一样的特色服务</a></span></li>
+          <li><h3><a href="###">帮助中心</a></h3><span><a href="###">您的购物指南</a></span></li>
+      </ul>
+    </div>
+    <div class="guide">
+	{foreach from=$helps item=help_cat name=foo}
+        <dl>
+            <dt><b>{$help_cat.cat_name}</b></dt>
+			{foreach from=$help_cat.article item=item}
+            <dd><a href="{$item.url}">{$item.title|escape:html}</a></dd>
+            {/foreach}
+        </dl>
+	{/foreach}	
+      
+    </div>
+    <div class="footer_bottom">
+        <div class="bottom_list">
+            
+            <ul class="clearfix">
+			{foreach name=nav_bottom_list from=$navigator_list.bottom item=nav}
+                <li><a href="{$nav.url}">{$nav.name}</a></li>
+			{/foreach}	
+             
+            </ul>
+        </div>
+        <div class="copyright">
+            <p>网络文化经营许可:浙网文【2015】0295-065号<span>12318举报</span></p><br/>
+            <p>互联网药品信息服务资质证书编号：浙-（经营性）-2017-0005<span>增值电信业务经营许可证： 浙B2-20110446</span></p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,63 @@
+.header .top_center>a{height:30px;}
+.header .top_center>a img{display:inline-block;height:28px;padding:1px 0;}
+
+.content{width:1200px;margin: 50px auto 0;}
+.content .code_pic{float:left;margin:0 20px 0 50px;}
+.content .code>img{margin-bottom: 50px;width:100px;height:100px;}
+.content .code p{font:24px/42px '微软雅黑';color:#333;}
+
+.content .tle_list{background: #e2e2e2;margin-top: 100px;}
+.content .tle_list ul li{display: inline-block;font:24px/66px '微软雅黑';color:#333;margin:0 50px 0 150px;}
+.content .tle_list ul li:first-child{margin:0 140px 0 170px;}
+
+.content .order_list ul{padding:40px 10px;}
+.content .order_list ul li a{margin-right: 40px;}
+.content .order_list ul li a:hover{color:#ca1c12;}
+.content .order_list ul li .price{display: inline-block;width:50px;margin-right: 220px;}
+.content .order_list ul li .sum{display: inline-block;width:50px;margin-right: 190px;}
+.content .order_list ul li .total{display: inline-block;width:50px;}
+
+.content .pay_list{width:1070px;margin: 30px auto 0;}
+.content .pay_list ul li{border:2px solid #333;cursor:pointer;}
+.content .pay_list ul li label{height:30px;width:30px;background: url(../img/pay_check.png) no-repeat center center;display: inline-block;position:relative;top:5px;margin-right: 15px;cursor:pointer;left:10px;}
+.content .pay_list ul li .current{background: url(../img/pay_true_check.png) no-repeat center center;}
+.content .pay_list>ul>li img{display:inline-block;margin-right:100px;position:relative;top:12px;}
+.content .pay_list>ul>li span{margin-right: 280px;font:14px/55px '微软雅黑';}
+.content .pay_list>ul>li i{margin-right: 260px;font:14px/55px '微软雅黑';}
+.content .pay_list ul li p{display: inline-block;font:14px/55px '微软雅黑';width:100px;}
+.pay_style{display: none;}
+.pay_style ul li{margin-bottom: 10px;}
+.pay_style ul li img{width:50px;height:40px;display:inline-block;position:relative;top:12px;}
+.pay_style ul li span{margin-right: 120px;font:14px/55px '微软雅黑';display: inline-block;width:80px;}
+.pay_style ul li a{margin: 0 250px 0 100px;}
+
+.content .pay_list>a{border:1px solid #333;padding:0 30px;margin: 40px 35px 40px 0;display: inline-block;font:18px/65px '微软雅黑';}
+.content .pay_list>p{padding-left:45px;background: url(../img/pay_ion2.png) no-repeat left center;font:18px/45px '微软雅黑';margin-bottom:45px;}
+
+.pay_input{width:1070px;;margin: 30px auto 0;color:#333;}
+.pay_input h4{font:24px '微软雅黑';}
+.pay_input ul,.pay_input>a{display: inline-block;color:#ca1c12;}
+.pay_input ul li{float:left;}
+.pay_input ul li input{width:48px;height:50px;text-align: center;}
+.btn a{float:right;display:inline-block;margin-bottom: 60px;padding:15px 100px;color:#fff;background: red;font-size:36px}
+
+
+
+/*支付失败 样式*/
+.failure{background:rgba(140,140,140,.6);position:fixed;top:0;left:0;width:100%;height:100%;display: none;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#608c8c8c,endColorstr=#608c8c8c);}
+.failure .remove a{font-size:24px;float:right;margin:5px 15px 0 0;}
+.failure .center{width:60%;background: #fff;margin-left: 20%;margin-top: 50px;}
+.failure .center .pic{width:45%;float:left;margin: 150px 0 150px 70px;}
+.failure .center .text h3{font:36px '微软雅黑';color:#fc1e01;padding: 100px 0 60px 0;}
+.failure .center .text span{font:24px/50px '微软雅黑';color:#333;}
+.failure .center .text>a{background: #ff9900;color:#fff;padding:10px 30px;font-size:24px;margin: 60px 40px 0 0;display: inline-block;position:relative;left:-50px;}
+
+
+/*支付成功 样式*/
+.success{background:rgba(140,140,140,.6);position:fixed;top:0;left:0;width:100%;height:100%;display: none;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#608c8c8c,endColorstr=#608c8c8c);}
+.success .remove a{font-size:24px;float:right;margin:5px 15px 0 0;}
+.success .center{width:60%;background: #fff;margin-left: 20%;margin-top: 50px;}
+.success .center .pic{width:45%;float:left;margin: 150px 0 150px 70px;}
+.success .center .text h3{font:36px '微软雅黑';color:#fc1e01;padding: 100px 0 60px 0;}
+.success .center .text span{font:24px/50px '微软雅黑';color:#333;}
+.success .center .text a{background: #ff9900;color:#fff;padding:10px 30px;font-size:24px;margin: 60px 10px 0 0;display: inline-block;position:relative;left:-50px;}

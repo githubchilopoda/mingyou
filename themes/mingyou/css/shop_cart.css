@@ -1,0 +1,55 @@
+.header .top_center>a{height:30px;}
+.header .top_center>a img{display:inline-block;height:28px;padding:1px 0;}
+
+.content label{width:12px;height:12px;border:1px solid #333;background: #999;display: inline-block;position:relative;top:2px;margin-right: 5px;cursor:pointer;}
+.content{width:1200px;margin: 30px auto 0;}
+.content .content_top h1{font:30px '微软雅黑';display: inline-block;color:#e61d1a;border-bottom:3px solid #e61d1a;margin-left: 20px;}
+.content .content_top div{float:right;margin-top: 20px;}
+.content .content_top div select{width:140px;}
+.content .tle_list{background: #c4c3c3;}
+.content .tle_list ul li{display: inline-block;font:14px/30px '微软雅黑';width:190px;text-align: center;}
+.content .tle_list ul li:first-child{text-align: left;padding-left: 20px;cursor:pointer;}
+
+/*购物车样式*/
+.shop_list{margin-top: 30px;}
+.shop_list>ul>li{border-top:1px solid #c7c6c6;padding:15px 20px 60px;background: #edecec;font-size:14px;}
+.shop_list>ul>li ul li{display: inline-block;text-align: center;height:22px;}
+.shop_list>ul>li ul li:first-child+li{margin-right: 65px;width:200px;}
+.shop_list>ul>li ul li:first-child+li+li{margin-right: 105px;}
+.shop_list>ul>li ul li:first-child+li+li span{display: inline-block;width:120px;}
+.shop_list>ul>li ul li:first-child+li+li+li{margin-right: 100px;position:relative;top:15px;}
+.shop_list>ul>li ul li:first-child+li+li+li+li{margin-right: 90px;}
+.shop_list>ul>li ul li:first-child+li+li+li+li+li{line-height: 24px;}
+.shop_list>ul>li ul li a:hover{color:#ca1c12;}
+.shop_list>ul>li .sum a:hover{color:#333;}
+.shop_list>ul>li ul li:first-child+li+li+li i{background:#fb0309; color:#fff;padding:2px 10px;}
+.shop_list>ul>li ul li img{display: inline-block;position:relative;top:30px;margin: 0 50px 0 15px;width:82px;}
+.shop_list>ul>li .sum{border:2px solid #333;}
+.shop_list>ul>li .sum input{width:60px;font:14px/22px '微软雅黑';background: none;border:1px solid #333;border-top: 1px solid transparent;border-bottom: 1px solid transparent;text-align: center;}
+.shop_list>ul>li .sum a{padding: 0 5px;font-size:16px;}
+
+.content ul li .current{background: url(../img/shop_checked.png) no-repeat center center;}
+.footer_list .current_all{background: url(../img/shop_checked.png) no-repeat center center;}
+.tle_list .current_all{background: url(../img/shop_checked.png) no-repeat center center;}
+
+.footer_list{background: #edecec;border-top:1px solid #c7c6c6;margin: 15px 0 30px 0;padding:0 0 0 20px;position:relative;}
+.footer_list .checkedAll{margin-right: 20px;cursor: pointer;font:14px/100px '微软雅黑';}
+.footer_list .removeAll{margin-right: 30px;cursor: pointer;}
+.footer_list .collectionAll{margin-right:300px;cursor: pointer;}
+.footer_list .sum_All i{color:#ca1c12;width:20px;display: inline-block;text-align: center;}
+.footer_list .hidden_menu{font-size:20px;font-weight: 900;position:relative;top:-5px;cursor: pointer;}
+.footer_list .total{display: inline-block;font-size:14px;position:relative;top:10px;}
+.footer_list .total i{font:24px '微软雅黑';position:relative;}
+.footer_list>a{float:right;display: inline-block;color:#fff;background: #fb0309;width:120px;text-align: center;font:30px/100px '微软雅黑';}
+.footer_list .menu_pic{position:absolute;width:95%;height:150px;top:-170px;background: rgba(124,122,120,.8);padding:10px;display:none;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#807c7a78,endColorstr=#807c7a78);}
+.footer_list .menu_pic i{color:red;}
+.footer_list .menu_pic h6{color:#fff;font-size:16px;margin-bottom: 20px;}
+.footer_list .menu_pic li{float:left;margin:0 20px;padding:10px;background: #fff;width:82px;}
+.footer_list .menu_pic li img{width:100%;}
+.footer_list .menu_pic .shop_left,.footer_list .menu_pic .shop_right{position:absolute;z-index: 2;top:80px;}
+.footer_list .menu_pic .shop_left{left:20px;}
+.footer_list .menu_pic .shop_right{right:20px;}
+.footer_list .menu_pic>div{width:88%;margin-left: 60px;overflow: hidden;position: relative;height:105px;}
+.footer_list .menu_pic>div ul{width:10000px;position:absolute;}
+
+#view{position:fixed;width:100%;height:100%;top:0;left:0;z-index:1000;background: rgba(124,122,120,.6);padding:10px;display:none;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#607c7a78,endColorstr=#607c7a78);}

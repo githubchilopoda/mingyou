@@ -1,0 +1,22 @@
+.content{width:1200px;margin: 25px auto 0;}
+.content .sidebar{float:left;}
+.content .main{float:left;margin-left: 15px;width:869px;}
+.content .main .top{border:1px solid #333;width:100%;}
+.content .main .top p{font:18px/48px '微软雅黑';padding:0 30px;}
+.main .btn_new_add{background: #ccc;}
+.main .btn_new_add a{padding:15px 0;float:left;}
+.main .btn_new_add span{margin: 40px 0 0 10px;float:left;font:14px '微软雅黑';}
+.main .btn_new_add span i{color:#ff0101;}
+
+.add_list li{border:1px solid #333;margin-bottom: 40px;}
+.add_list .list_top{background: url(../img/add_tool.png) no-repeat left center;background-position-x: 90px;padding:0 15px;}
+.add_list .hide,.add_list h2,.add_list .remove{display: inline-block;}
+.add_list h2{margin-right: 30px;line-height: 50px;}
+.add_list .remove{float:right;}
+.add_list .list_left{margin-left: 140px;float:left;font:14px/35px '微软雅黑';color:#333333;}
+.add_list .list_left span,.add_list .list_right span{display: block;}
+.add_list .list_right{margin-left: 40px;float:left;font:14px/35px '微软雅黑';color:#333333;}
+.add_list .list_right a{float:right;margin-left:30px;}
+.add_list .list_right a:hover{color:#ca1c12;}
+
+

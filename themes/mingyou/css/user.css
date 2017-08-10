@@ -1,0 +1,43 @@
+.content{width:1200px;margin: 20px auto 0;}
+.sidebar{float:left;}
+.main{float:right;margin-right: 15px;margin-bottom: 100px;width:833px;}
+.main .main_top{border:1px solid #333;border-radius: 15px;width:828px;margin-bottom: 30px;}
+.main .main_top>a{display: inline-block;float:left;margin: 50px 0 0 40px;}
+.main .main_top .user_left{float:left;margin-left: 15px;}
+.main .main_top .user_right{float:right;border-left:2px solid #5a5a5a;margin: 12px 0 18px 0;}
+.main .main_top h4{margin:35px 0 15px 0;font:18px '微软雅黑';}
+.main .main_top .user_left span{display: inline-block;padding-left: 32px;background:url(../img/user_icon.png) no-repeat left center;font:14px/24px '微软雅黑';}
+.main .main_top h5{font:14px/24px '微软雅黑';}
+.main .main_top h5 strong{display: inline-block;width:125px;background: url(../img/user_icon2.png) no-repeat center center;}
+.main .main_top i{font:14px/24px '微软雅黑';}
+.user_right li{display: inline-block;width:100px;text-align: center;margin: 25px 0;}
+.user_right li a span{color:red;text-decoration: underline;width:100%;}
+.user_right textarea{width:340px;margin: 0 30px 25px;height:70px;background: none;padding:5px;color:#999;}
+
+.main .column li a{font:24px '微软雅黑';}
+.main .column li{display: inline-block;margin-left:40px;padding:40px 0;}
+.main .column .current a{color:#ca1c12;}
+
+.list_tle{border:1px solid #333;padding:0 20px;}
+.list_tle span{float:right;margin-left: 75px;font:18px/40px '微软雅黑';width:75px;}
+
+/*以下为商品列表 表格样式*/
+.main .column_list>.current_list{display: block;}
+.order_list{display: none;}
+.order_list li{border:1px solid #333;margin-bottom: 35px;}
+.order_list li th{border-bottom:1px solid #333;padding:0 10px;}
+.order_list li th span{font:14px/35px '微软雅黑';margin-right: 50px;}
+.order_list li tr{border:1px solid red;font-size:14px;}
+.order_list li table tr td{text-align: center;}
+.order_list li tr h5{display: inline-block;font-size:14px;margin-top: 40px;}
+.order_list li tr td a{font:14px/36px '微软雅黑';}
+.order_list li tr td a:hover{color:#ca1c12;}
+.order_list li table{width:100%;}
+.order_list li table img{float:left;margin: 10px 10px 10px 20px;}
+.order_list li table tr td:first-child{width:35%;}
+.order_list li tr td:first-child+td{width:10%;}
+.order_list li tr td:first-child+td+td{width:25%;}
+.order_list li tr td:first-child+td+td+td{width:13%}
+.order_list li tr td:first-child+td+td+td{width:17%;}
+/*以上为商品列表 表格样式 end*/
+
